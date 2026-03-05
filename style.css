@@ -1,0 +1,202 @@
+:root{
+    font-family: 'Courier New', Courier, monospace;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    --border-glow-color:rgba(54, 25, 148, 1);
+    --border-glow-color2: rgba(54, 25, 148, 1);
+    --border-glow-radius: 25px;
+    --border-glow-amount: 5px;
+
+    --background-pattern-dot-color: rgba(255, 255, 255, 0.15);
+    --background-pattern-color: transparent;
+    --background-pattern-dot-size: .1rem;
+    --background-pattern-spacing: 20px 20px;
+}
+
+
+
+body{
+    margin:0;
+    padding:0;
+    max-width: 100dvw;
+    color: white;
+    background-color: #0d0f14;
+    background-image: radial-gradient(
+        var(--background-pattern-dot-color) 
+        var(--background-pattern-dot-size), 
+        var(--background-pattern-color) 
+        1px);
+
+    background-size: var(--background-pattern-spacing);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* margin: 2rem; */
+}
+
+/*** BEGIN HEADER ***/
+.bio-header{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(3px);
+    padding: 1.5rem;
+    border-radius: var(--border-glow-radius);
+    border: 1px solid var(--border-glow-color2);/* A basic border */
+    box-shadow: 0 0 0 var(--border-glow-color2), /* Inner glow (optional, adjust blur/spread as needed) */
+                0 0 var(--border-glow-amount) var(--border-glow-color2), /* Main glow */
+                0 0 0 var(--border-glow-color2); /* Wider glow (optional) */
+}
+
+.bio-header:hover, main:hover{
+    --border-glow-amount: 15px;
+}
+
+.bio-picture{
+    /* width: 200px; */
+    width: 8rem;
+    height: 8rem;
+    background-color: white;
+}
+
+.information{
+    text-align: center;
+}
+
+.bio-header .nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+ .nav-bar a{
+    border: 1px solid white; 
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    backdrop-filter: blur(3px);
+    color: white;
+    align-content: center;
+}
+
+
+.nav-bar a:hover{
+    border: 1px solid #ffffff; /* A basic border */
+    box-shadow: 0 0 0 #ffffff, /* Inner glow (optional, adjust blur/spread as needed) */
+                0 0 5px #ffffff, /* Main glow */
+                0 0 0 #ffffff; /* Wider glow (optional) */
+}
+/*** END HEADER ***/
+
+
+/*** BEGIN PROJECTS ***/
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+    flex-grow: 1;
+    border: 1px solid white;
+    padding:10px;
+    border-radius: 5px;
+    backdrop-filter: blur(3px);
+    border-radius: var(--border-glow-radius);
+    border: 1px solid var(--border-glow-color);/* A basic border */
+    box-shadow: 0 0 0 var(--border-glow-color), /* Inner glow (optional, adjust blur/spread as needed) */
+                0 0 var(--border-glow-amount) var(--border-glow-color), /* Main glow */
+                0 0 0 var(--border-glow-color); /* Wider glow (optional) */
+    
+}
+
+.projects, .tech-stack{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-bottom: 25px;
+}
+
+.project-item{
+    border: solid 1px lightgray;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.project-item:hover{
+    border: 1px solid #ffffff; /* A basic border */
+    box-shadow: 0 0 0 #ffffff, /* Inner glow (optional, adjust blur/spread as needed) */
+                0 0 5px #ffffff, /* Main glow */
+                0 0 0 #ffffff; /* Wider glow (optional) */
+}
+
+
+li.project-item header{
+    display: flex;
+    flex-grow: 1;
+}
+
+li.project-item header h3{
+    width: 100%;
+}
+
+.expand{
+    height: 100vh;
+}
+
+.expand iframe{
+    height: 100%;
+}
+
+li.project-item header a{
+    align-self: center;
+    color: white;
+}
+li.project-item header h3{
+    cursor: pointer;
+    user-select: none;
+}
+
+
+a img{
+    filter: brightness(0) invert(1);
+    height: 1.5rem;
+}
+
+a img:hover{
+    height: 1.6rem;
+}
+
+iframe{
+    width: 100%;
+    border: 0;
+}
+
+ul{
+    list-style-type: none;
+}
+/*** END PROJECTS ***/
+
+
+
+
+
+/*** BEGIN FOOTER ***/
+footer{
+    width: 100%;
+    align-self: flex-end;
+}
+/*** END FOOTER ***/
+
+
+@media (min-width: 768px) {
+
+    .container{
+        margin:15px 30%;
+    }
+}

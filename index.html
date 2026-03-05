@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="app.js" defer></script>
+</head>
+<body>
+ <!--Inspiration: https://www.aayush-mishra.xyz/-->
+
+ <div class="container">
+    <header class="bio-header">
+        <img class="bio-picture">
+        <div class="information">
+            <h1>Elias Sørensen</h1>
+            <div class="row">
+                <p>Developer</p>
+                <p>Norway - Møre & Romsdal - Ulsteinvik</p>
+            </div>
+        </div>
+        <nav class="nav-bar">
+            <a href="www.github.com">
+                Github
+            </a>
+            <a href="#">Email</a>
+            <a href="#">LinkedIn</a>
+        </nav>
+    </header>
+
+    <main >
+        <article class="projects">
+            <header>
+                <h2>
+                    Projects
+                </h2>
+            </header>
+            <section class="projects-holder">
+                <ul>
+                    <li class="project-item">
+                        <header>
+                            <h3 onclick="app.expand(this);">Cozy Cafè</h3>
+                            <a href="https://elias-kodehode.github.io/" target="_blank">
+                                <img src="./icons/expand-arrows.png">
+                            </a>
+                        </header>
+                        <iframe src="https://elias-kodehode.github.io/">
+
+                        </iframe>
+                    </li>
+                    <li class="project-item">
+                        <h3>PLACEHOLDER</h3>
+                        <p>Placeholder</p>
+                    </li>
+                    <li class="project-item">
+                        <h3>PLACEHOLDER</h3>
+                        <p>Placeholder</p>
+                    </li>
+                </ul>
+            </section>
+        </article>
+
+
+        <article class="tech-stack">
+            <header>
+                <h2>
+                    My Tech Stack
+                </h2>
+            </header>
+            <section class="projects-holder">
+                <ul>
+                    <li class="project-item">
+                        <p>C#</p>
+                    </li>
+                    <li class="project-item">
+                        <p>.NET</p>
+                    </li>
+                    <li class="project-item">
+                        <p>ASP.NET</p>
+                    </li>
+                    <li class="project-item">
+                        <p>Blazor</p>
+                    </li>
+                    <li class="project-item">
+                        <p>Aspire</p>
+                    </li>
+                    <li class="project-item">
+                        <p>Docker</p>
+                    </li>
+                    <li class="project-item">
+                        <p>EFCore</p>
+                    </li>
+                    <li class="project-item">
+                        <p>JS/TS</p>
+                    </li>
+                    <li class="project-item">
+                        <p>HTML/CSS</p>
+                    </li>
+                    <li class="project-item">
+                        <p>Unity</p>
+                    </li>
+                </ul>
+            </section>
+        </article>
+
+    </main>
+    <footer>
+        FOOTER
+    </footer>
+</div>
+
+
+
+
+
+
+ <!--
+    TEMPLATES
+ -->
+
+<template id="project-item-template">
+
+
+</template>
+
+</body>
+</html>
+
+
