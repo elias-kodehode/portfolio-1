@@ -1,6 +1,6 @@
 const app = {};
 
-
+var mouseElement = document.getElementById("mouse");
 
 app.expand = (obj) =>  {
     var parent = obj.parentElement.parentElement;
@@ -17,4 +17,7 @@ app.expand = (obj) =>  {
 document.addEventListener("mousemove", function(evt)  {
     const x = evt.clientX;
     const y = evt.clientY;
+
+    mouseElement.style.left = x + "px";
+    mouseElement.style.top = y + "px";
 })
