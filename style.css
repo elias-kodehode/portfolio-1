@@ -4,7 +4,7 @@
     --border-glow-color:rgba(54, 25, 148, 1);
     --border-glow-color2: rgba(54, 25, 148, 1);
     --border-glow-radius: 25px;
-    --border-glow-amount: 5px;
+    --border-glow-blur: 5px;
 
     --background-pattern-dot-color: rgba(255, 255, 255, 0.15);
     --background-pattern-color: transparent;
@@ -12,6 +12,12 @@
     --background-pattern-spacing: 20px 20px;
     
     scroll-behavior: smooth;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 
@@ -26,12 +32,10 @@
     z-index: -100000;
     transform: translate(-50%, -50%);
     pointer-events: none; 
+    overflow: hidden;
 }
 
 body{
-    margin:0;
-    padding:0;
-    max-width: 100dvw;
     color: white;
     background-color: #0d0f14;
     background-image: radial-gradient(
@@ -46,7 +50,7 @@ body{
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    /* margin: 2rem; */
+    margin: 0 2rem;
 }
 
 /*** BEGIN HEADER ***/
@@ -61,7 +65,7 @@ body{
     border-radius: var(--border-glow-radius);
     border: 1px solid var(--border-glow-color2);/* A basic border */
     box-shadow: 0 0 0 var(--border-glow-color2), /* Inner glow (optional, adjust blur/spread as needed) */
-                0 0 var(--border-glow-amount) var(--border-glow-color2), /* Main glow */
+                0 0 var(--border-glow-blur) var(--border-glow-color2), /* Main glow */
                 0 0 0 var(--border-glow-color2); /* Wider glow (optional) */
 
     border-top-left-radius: 0;
@@ -70,7 +74,7 @@ body{
 }
 
 .bio-header:hover, main:hover, footer:hover{
-    --border-glow-amount: 15px;
+    --border-glow-blur: 15px;
 }
 
 .bio-picture{
@@ -116,36 +120,41 @@ body{
 main{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 4rem;
+    gap: 2rem;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     flex-grow: 1;
-    border: 1px solid white;
     padding:10px;
     border-radius: 5px;
     backdrop-filter: blur(3px);
     border-radius: var(--border-glow-radius);
-    border: 1px solid var(--border-glow-color);/* A basic border */
-    box-shadow: 0 0 0 var(--border-glow-color), /* Inner glow (optional, adjust blur/spread as needed) */
-                0 0 var(--border-glow-amount) var(--border-glow-color), /* Main glow */
-                0 0 0 var(--border-glow-color); /* Wider glow (optional) */
-    
+    /* border: 1px solid var(--border-glow-color); */
+
+    box-shadow: 5px 0 15px var(--border-glow-color), /* Inner glow (optional, adjust blur/spread as needed) */
+                0 0 var(--border-glow-blur) var(--border-glow-color), /* Main glow */
+                0 0 15px var(--border-glow-color); /* Wider glow (optional) */  
 }
 
-.projects, .tech-stack{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    margin-bottom: 25px;
+
+#tech-stack ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem;
 }
 
-.project-item{
+#tech-stack li{
     border: solid 1px lightgray;
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
 }
-.project-item:hover{
+
+
+
+#tech-stack li:hover{
     border: 1px solid #ffffff; /* A basic border */
     box-shadow: 0 0 0 #ffffff, /* Inner glow (optional, adjust blur/spread as needed) */
                 0 0 5px #ffffff, /* Main glow */
@@ -153,50 +162,14 @@ main{
 }
 
 
-li.project-item header{
-    display: flex;
-    flex-grow: 1;
-}
-
-li.project-item header h3{
-    width: 100%;
-}
-
-.expand{
-    height: 100vh;
-}
-
-.expand iframe{
-    height: 100%;
-}
-
-li.project-item header a{
-    align-self: center;
-    color: white;
-}
-li.project-item header h3{
-    cursor: pointer;
-    user-select: none;
-}
 
 
-a img{
-    filter: brightness(0) invert(1);
-    height: 1.5rem;
-}
 
-a img:hover{
-    height: 1.6rem;
-}
-
-iframe{
-    width: 100%;
-    border: 0;
-}
 
 ul{
     list-style-type: none;
 }
+
 /*** END PROJECTS ***/
 
 
@@ -205,12 +178,13 @@ ul{
 
 /*** BEGIN FOOTER ***/
 footer{
+    margin-top: 20px;
     /* width: 100%; */
     /* align-self: flex-end; */
     border-radius: var(--border-glow-radius);
     border: 1px solid var(--border-glow-color2);/* A basic border */
     box-shadow: 0 0 0 var(--border-glow-color2), /* Inner glow (optional, adjust blur/spread as needed) */
-                0 0 var(--border-glow-amount) var(--border-glow-color2), /* Main glow */
+                0 0 var(--border-glow-blur) var(--border-glow-color2), /* Main glow */
                 0 0 0 var(--border-glow-color2); /* Wider glow (optional) */
     border-bottom: 0;
     padding: 10px;
@@ -225,6 +199,10 @@ footer{
 @media (min-width: 768px) {
 
     .container{
-        margin:0px 30%;
+        margin:0px 20rem;
+    }
+
+    #tech-stack ul{
+        grid-template-columns: repeat(2, 1fr);
     }
 }
